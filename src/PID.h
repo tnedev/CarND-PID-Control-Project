@@ -9,6 +9,9 @@ public:
   double p_error;
   double i_error;
   double d_error;
+  double prev_cte;
+  double int_cte;
+  double i_error_max;
 
   /*
   * Coefficients
@@ -16,6 +19,7 @@ public:
   double Kp;
   double Ki;
   double Kd;
+
 
   /*
   * Constructor
