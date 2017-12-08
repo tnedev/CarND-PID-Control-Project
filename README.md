@@ -2,6 +2,19 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## Reflection
+
+### Describe the effect each of the P, I, D components had in your implementation.
+* The proportional term in the PID controller sets the main response to an error between the current sterring angle and the desired steering angle. 
+* The differential term acts as a quick response to avoid overshooting or smooth out oscillations.
+* The integral term is the slowest response. It corrects system biases and slow oscillations. 
+
+### Describe how the final hyperparameters were chosen.
+
+* I chose the hyperparameters manually. First starting with small iterations of the proportional gain, while the D and I gains stay at 0. I continue to itterate over the P values until I reach a car behaviour which oscillates arount the desired steering angle without overshooting out of the track or goes out of the track because of low proportional response. 
+The proportional gain, however, could also resonate and get out of the track, which I also try to minimize, but can't be avoided in certain situations. 
+After I selected a P gain which behaves well, I start the same procedure with chosing the differential gain. The goal here is to reduce the oscillations of the car and have a stabilizing effect on quick steering angle changes. 
+When I reached a stable behaviour I also add a small integral gain and set a maximum integral error value. This will correct small biases in the system, however, I did not notices the need of integrail gain in the simulator. 
 
 ## Dependencies
 
